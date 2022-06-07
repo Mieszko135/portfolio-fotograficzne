@@ -1,0 +1,50 @@
+@import "../settings/variables";
+
+.top-rated-photos-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+}
+
+.top-header {
+    @media (max-width: 400px) {
+        font-size: 1rem;
+    }
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: $logo-font-family;
+    letter-spacing: 0.5rem;
+    text-align: center;
+}
+
+.top-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.top-photo {
+    @media (max-width: 1366px) {
+        width: 70%;
+    }
+    width: 45%;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+    &__image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+}
+
+.top-text {
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
