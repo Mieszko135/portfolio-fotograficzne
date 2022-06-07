@@ -1,8 +1,8 @@
 import './App.scss';
+import { Header } from './elements/Header';
 
 function App() {
-  return <div className='testBox'>blabla</div>
-
+  return <Header />
 }
 
 export default App;
