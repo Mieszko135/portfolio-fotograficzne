@@ -2,9 +2,11 @@ import React from 'react';
 import { NavigationItem } from './NavigationItem';
 
 export function Navigation() {
-    return <ul className='nav-menu'>
+    return <nav className='nav-menu'>
+                <ul className="nav-menu__items">
                 <NavigationItem category = "Galeria"/>
                 <NavigationItem category = "Galeria Przed / Po"/>
                 <NavigationItem category= "Kontakt"/>
-            </ul>
+                </ul>
+            </nav>
 }
