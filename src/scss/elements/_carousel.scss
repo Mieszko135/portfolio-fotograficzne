@@ -47,6 +47,12 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        @media (max-width: 800px) {
+            font-size: 2rem;
+        }
+        @media (max-width: 400px) {
+            font-size: 1rem;
+        }
         font-size: 3rem;
         color: rgba(255, 68, 0, 0.479);
         z-index: 10;

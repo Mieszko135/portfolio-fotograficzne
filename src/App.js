@@ -3,6 +3,7 @@ import { Carousel } from './elements/Carousel';
 import { Header } from './elements/Header';
 import { CarouselData } from './elements/CarouselData';
 import { TopRatedPhotos } from "./elements/TopRatedPhotos"
+import { Footer } from './elements/Footer';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Carousel slides={CarouselData}/>
       <TopRatedPhotos />
+      <Footer />
     </>
   )
 }

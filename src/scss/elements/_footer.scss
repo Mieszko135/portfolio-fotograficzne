@@ -1,0 +1,14 @@
+.page-footer {
+    width: 100%;
+    height: toRem(100px);
+    width: 100%;
+    box-shadow: 0px 2px 26px $color-black-shadow;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
