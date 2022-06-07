@@ -1,4 +1,21 @@
+@import "./settings/variables";
+@import "./utils/mixins";
+
+html, body {
+    font-size: $base-font-size;
+}
+
 body {
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;;
+    font-family: $basic-font-family;
+}
+
+.container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include mobile (1366px) {
+        max-width: 1366px;
+        margin: 0 auto;
+    }
 }

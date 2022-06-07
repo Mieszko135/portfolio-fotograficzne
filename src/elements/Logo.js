@@ -7,8 +7,8 @@ export function Logo() {
 
     return (
         <div className="header__logo logo">
-            <img src={pageLogo} alt="Aparat fotograficzny, ikona"/>
-            <span className="owner-name">Mieszko Braun</span> Fotografia
+            <img className="logo__icon" src={pageLogo} alt="Aparat fotograficzny, ikona"/>
+            <div className="logo__text"><span className="owner-name">Mieszko Braun</span> Fotografia</div>
         </div>
         )
 }
