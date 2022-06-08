@@ -1,0 +1,23 @@
+.about-me {
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+
+    &__header {
+        font-family: $logo-font-family;
+        font-size: 3rem;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        max-width: 70%;
+        text-align: center;
+        @media (max-width: 620px) {
+            font-size: 1rem;
+        }
+    }
+}
