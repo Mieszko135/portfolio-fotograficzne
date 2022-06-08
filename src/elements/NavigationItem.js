@@ -1,7 +1,7 @@
 import React from "react";
 import {motion} from "framer-motion";
 
-export function NavigationItem({category, delay, destination}) {
+export function NavigationItem({category, delay}) {
 
     const animateFrom = {opacity: 0, y: -40};
     const animateTo = {opacity: 1, y: 0};
