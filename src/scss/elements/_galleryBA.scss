@@ -13,6 +13,22 @@
     border: 2px solid white;
     display: flex;
     margin: 0 auto;
+    @media (max-width: 900px) {
+      width: 700px;
+      height: 500px;
+    }
+    @media (max-width: 750px) {
+      width: 600px;
+      height: 400px;
+    }
+    @media (max-width: 600px) {
+      width: 500px;
+      height: 300px;
+    }
+    @media (max-width: 500px) {
+      width: 400px;
+      height: 250px;
+    }
     
     .img {
       position: absolute;
@@ -21,11 +37,23 @@
       width: 100%;
       height: 100%;
       background-size: 900px 100%;
+      @media (max-width: 900px) {
+        background-size: 700px 100%;
+      }
+      @media (max-width: 750px) {
+        background-size: 600px 100%;
+      }
+      @media (max-width: 600px) {
+        background-size: 500px 100%;
+      }
+      @media (max-width: 500px) {
+        background-size: 400px 100%;
+      }
     }
     
-    // .background-img {
-    //   background-image: url("../../../public/database/before-test.jpg");
-    // }
+    .background-img {
+      background-image: url("../../../public/database/before-test.jpg");
+    }
     
     .foreground-img {
       background-image: url("../../../public/database/after-test.jpg");
@@ -56,5 +84,17 @@
       height: 600px;
       background: white;
       cursor: pointer;
+      @media (max-width: 900px) {
+        height: 500px;
+      }
+      @media (max-width: 750px) {
+        height: 400px;
+      }
+      @media (max-width: 600px) {
+        height: 300px;
+      }
+      @media (max-width: 500px) {
+        height: 250px;
+      }
   }
 }

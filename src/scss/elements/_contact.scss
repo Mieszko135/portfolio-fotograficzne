@@ -14,18 +14,18 @@
         padding: 2rem 0;
         font-size: 2rem;
         text-align: center;
-        margin-top: 100px;
+        margin: 100px 20px 0 20px;
         @media (max-width: 850px) {
             font-size: 1rem;
             margin-top: 50px;
         }
     }
+}
 
-    &-form {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
+.responsive-form {
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 .form-control {

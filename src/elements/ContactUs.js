@@ -18,14 +18,14 @@ export function ContactUs() {
 
     return (
         <section className="contact-container">
-            <div className="contact-description"><h2 className="contact-description__header">Skontaktuj się ze mną</h2><p className="contact-description__text">Jeśli jesteś zainteresowany współpracą, albo chciałbyś kupić, któreś zdjęcie lub po prostu chcesz porozmawiać o fotografii napisz poprzez poniższy formularz <img src={smile} alt="uśmiechnięta buźka"/></p></div>
+            <div className="contact-description"><h2 className="contact-description__header">Skontaktuj się ze mną</h2><p className="contact-description__text">Jeśli jesteś zainteresowany współpracą, albo chciałbyś kupić, któreś zdjęcie lub po prostu chcesz porozmawiać o fotografii napisz poprzez poniższy formularz</p><img className="smile-emoticon" src={smile} alt="uśmiechnięta buźka"/></div>
             <div className="contact-form">
                 <form onSubmit={sendEmail}>
-                    <input type="text" className="form-control" placeholder="Imię" name="name"/>
-                    <input type="email" className="form-control" placeholder="E-mail" name="email"/>
-                    <input type="text" className="form-control" placeholder="Temat" name="subject"/>
-                    <textarea className="form-control" cols="60" rows="8" placeholder="Twoja wiadomość..." name="message"/>
-                    <input type="submit" className="form-btn" value="Send Message"/>
+                    <div className="responsive-form"><input type="text" className="form-control" placeholder="Imię" name="name"/></div>
+                    <div className="responsive-form"><input type="email" className="form-control" placeholder="E-mail" name="email"/></div>
+                    <div className="responsive-form"><input type="text" className="form-control" placeholder="Temat" name="subject"/></div>
+                    <div className="responsive-form"><textarea className="form-control" cols="60" rows="8" placeholder="Twoja wiadomość..." name="message"/></div>
+                    <div className="responsive-form"><input type="submit" className="form-btn" value="Send Message"/></div>
                 </form>
             </div>
         </section>
