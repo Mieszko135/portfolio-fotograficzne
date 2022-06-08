@@ -10,7 +10,7 @@ export function GalleryPhotos() {
     return (
         <section className="all-photos-gallery">
             {CarouselData.map((photo, index) => {
-                return <img key={index} src={photo.image} alt={photo.alt} onClick={() => {
+                return <img className="gallery-photo" key={index} src={photo.image} alt={photo.alt} onClick={() => {
                     setState("popup");
                     setImgSrc(photo.image);
                     setImgAlt(imgAlt);

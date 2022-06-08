@@ -1,0 +1,60 @@
+@import "../utils/mixins";
+
+.main-section {
+    height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+}
+
+.photo-container {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    border: 2px solid white;
+    display: flex;
+    margin: 0 auto;
+    
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 900px 100%;
+    }
+    
+    .background-img {
+      background-image: url("../../../public/database/before-test.jpg");
+    }
+    
+    .foreground-img {
+      background-image: url("../../../public/database/after-test.jpg");
+      width: 50%;
+    }
+}
+
+.before-after-slider {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(#f2f2f2, .3);
+    outline: none;
+    margin: 0;
+    transition: all .2s;
+    @include center;
+    
+    &:hover {
+      background: rgba(#f2f2f2, .1);
+    }
+    
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 6px;
+      height: 600px;
+      background: white;
+      cursor: pointer;
+  }
+}
