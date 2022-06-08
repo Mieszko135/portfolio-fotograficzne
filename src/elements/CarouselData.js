@@ -49,4 +49,29 @@ export const CarouselData = [
         alt: "wschód słońca na pustyni",
         rating: 2
     },
+    {
+        image: "./database/wydma.jpg",
+        alt: "cień na wydmie",
+        rating: 2
+    },
+    {
+        image: "./database/tory.jpg",
+        alt: "tory",
+        rating: 5
+    },
+    {
+        image: "./database/drzewa.jpg",
+        alt: "las",
+        rating: 2
+    },
+    {
+        image: "./database/gwiazdy2.jpg",
+        alt: "gwiazdy na mazurach",
+        rating: 1
+    },
+    {
+        image: "./database/torun.jpg",
+        alt: "panorama torunia",
+        rating: 0
+    },
 ]
