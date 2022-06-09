@@ -1,6 +1,6 @@
 import React from 'react';
 import { DayPhoto } from './DayPhoto';
-import { MonthPhoto } from './MonthPhoto';
+// import { MonthPhoto } from './MonthPhoto';
 
 export function TopRatedPhotos() {
     return (
@@ -8,7 +8,7 @@ export function TopRatedPhotos() {
             <h2 className="top-header">Najlepsze zdjęcia:</h2>
             <div className="top-photos">
                 <DayPhoto />
-                <MonthPhoto />
+                {/* <MonthPhoto /> */}
             </div>
         </div>
     )

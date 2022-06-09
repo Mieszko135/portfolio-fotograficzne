@@ -1,6 +1,6 @@
 import React from "react";
 import emailjs from '@emailjs/browser';
-import smile from "../images/smile.svg"
+import smile from "../images/smile.svg";
 
 export function ContactUs() {
 
@@ -14,7 +14,7 @@ export function ContactUs() {
               console.log(error.text);
           });
           e.target.reset();
-      };
+    };
 
     return (
         <section className="contact-container">
