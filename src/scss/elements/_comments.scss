@@ -1,0 +1,48 @@
+.all-comments-container {
+    color: black;
+    background-color: rgba(211, 211, 211, 0.5);
+    overflow-y: auto;
+    @media (max-width: 600px) {
+        font-size: 0.5rem;
+    }
+}
+
+.nick-textarea, .new-comment-textarea {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 68, 0, 0.26);
+    border: 1px solid rgb(255, 170, 140);
+
+    &:focus {
+        outline: none;
+        border: 1px solid orangered;
+    }
+
+    &::placeholder {
+        color: black;
+    }
+}
+
+.comments-form {
+    margin-top: 1rem;
+}
+
+.new-message-btn {
+    padding: 0.25rem 1rem;
+    border: 1px solid rgb(255, 170, 140);
+    border-radius: 1rem;
+    float: right;
+    margin-top: 0.5rem;
+}
+
+.characters-counter {
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.single-comment {
+    padding: 2px;
+    border-radius: 2px;
+    background-color: rgba(255, 68, 0, 0.26);
+    border: 1px dashed orangered;
+}

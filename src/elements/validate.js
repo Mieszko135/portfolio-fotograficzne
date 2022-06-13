@@ -1,12 +1,13 @@
 export function validate(values) {
     const errorMessages = {};
+    const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
     if (!values.name) {
         errorMessages.name = "Pole musi zawierać imię"
     }
 
-    if (!values.email) {
-        errorMessages.email = "Pole musi zawierać adres e-mail"
+    if (!values.email || !values.email.match(pattern)) {
+        errorMessages.email = "Pole musi zawierać poprawny adres e-mail"
     }
 
     if (!values.subject) {

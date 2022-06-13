@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs} from "firebase/firestore";
 import db from ".././firebase";
+import { AllComments } from "./AllComments";
 
 export function GalleryPhotos() {
 
@@ -8,6 +9,7 @@ export function GalleryPhotos() {
     const [imgSrc, setImgSrc] = useState("");
     const [imgAlt, setImgAlt] = useState("");
     const [photos, setPhotos] = useState([]);
+    const [commentId, setCommentId] = useState("");
 
     useEffect(() => {
         getDocs(collection(db, "Photo Gallery")).then((snapshot) => {
@@ -22,6 +24,7 @@ export function GalleryPhotos() {
                     setState("popup");
                     setImgSrc(photo.src);
                     setImgAlt(photo.alt);
+                    setCommentId(photo.id);
                 }}/>
             })}
             <div className={state} onClick={() => {
@@ -30,6 +33,8 @@ export function GalleryPhotos() {
                 <img src={imgSrc} alt={imgAlt} className="popup__img" onClick={(e) => {
                     e.stopPropagation()
                 }}/>
+                
+                <AllComments commentId = {commentId}/>
             </div>
         </section>
     )
