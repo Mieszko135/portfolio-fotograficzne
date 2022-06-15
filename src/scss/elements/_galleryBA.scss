@@ -1,9 +1,38 @@
 @import "../utils/mixins";
 
-.main-section {
-    height: calc(100vh - 200px);
+.ba-main-section {
+    height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.ba-header {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.all-ba-photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 500px;
+  gap: 1rem;
+}
+
+.after-img-box {
+  width: 270px;
+  max-height: 224px;
+
+  & .after-img  {
+    width: 100%;
+    height: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .photo-container {
@@ -13,6 +42,7 @@
     border: 2px solid white;
     display: flex;
     margin: 0 auto;
+    margin-bottom: 3rem;
     @media (max-width: 900px) {
       width: 700px;
       height: 500px;
@@ -28,6 +58,10 @@
     @media (max-width: 500px) {
       width: 400px;
       height: 250px;
+    }
+    @media (max-width: 400px) {
+      width: 300px;
+      height: 170px;
     }
     
     .img {
@@ -49,15 +83,9 @@
       @media (max-width: 500px) {
         background-size: 400px 100%;
       }
-    }
-    
-    .background-img {
-      background-image: url("../../../public/database/before-test.jpg");
-    }
-    
-    .foreground-img {
-      background-image: url("../../../public/database/after-test.jpg");
-      width: 50%;
+      @media (max-width: 400px) {
+        background-size: 300px 100%;
+      }
     }
 }
 
@@ -74,7 +102,7 @@
     @include center;
     
     &:hover {
-      background: rgba(#f2f2f2, .1);
+      background: rgba(#f2f2f2, 0);
     }
     
     &::-webkit-slider-thumb {
@@ -95,6 +123,9 @@
       }
       @media (max-width: 500px) {
         height: 250px;
+      }
+      @media (max-width: 400px) {
+        height: 170px;
       }
   }
 }
