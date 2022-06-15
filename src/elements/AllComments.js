@@ -6,6 +6,8 @@ import { NewComment } from './NewComment';
 export function AllComments({commentId}) {
 
     const [comments, setComments] = useState([]);
+    let sumRate = 0;
+    let counter = 0;
 
     useEffect(() => {
         getDocs(collection(db, "Comments")).then((snapshot) => {
@@ -24,6 +26,18 @@ export function AllComments({commentId}) {
                 }
                 return null;
             })}
+            <div className="photo-rate">
+                {comments.map((comment) => {
+                    if (commentId === comment.id) {
+                        if (comment.rate !== 0) {
+                            sumRate += Number(comment.rate);
+                            counter ++;
+                        }
+                    }
+                    return null
+                })}
+                {parseFloat(sumRate / counter).toFixed(2)}
+            </div>
             <NewComment commentId={commentId}/>
         </div>
     )
