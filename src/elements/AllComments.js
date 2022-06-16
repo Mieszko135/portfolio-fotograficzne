@@ -8,12 +8,24 @@ export function AllComments({commentId}) {
     const [comments, setComments] = useState([]);
     let sumRate = 0;
     let counter = 0;
+    let average = 0;
 
     useEffect(() => {
         getDocs(collection(db, "Comments")).then((snapshot) => {
             setComments(snapshot.docs.map((doc) => doc.data()))
         })
     }, []);
+
+    comments.map((comment) => {
+        if (commentId === comment.id) {
+            if (comment.rate !== 0) {
+                sumRate += Number(comment.rate);
+                counter ++;
+            }
+            return null
+        }
+        return average = parseFloat(sumRate / counter).toFixed(2);
+    })
 
     return (
         <div className="all-comments-container" onClick={(e) => e.stopPropagation()}>
@@ -27,16 +39,7 @@ export function AllComments({commentId}) {
                 return null;
             })}
             <div className="photo-rate">
-                {comments.map((comment) => {
-                    if (commentId === comment.id) {
-                        if (comment.rate !== 0) {
-                            sumRate += Number(comment.rate);
-                            counter ++;
-                        }
-                    }
-                    return null
-                })}
-                {parseFloat(sumRate / counter).toFixed(2)}
+                Ocena: {average >= 0 ? average : "Brak ocen"}
             </div>
             <NewComment commentId={commentId}/>
         </div>

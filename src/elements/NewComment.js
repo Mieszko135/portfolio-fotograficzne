@@ -32,7 +32,7 @@ export function NewComment( {commentId} ) {
     }
 
     return (
-        <form onSubmit={postComment} className="comments-form" onClick={(e) => e.stopPropagation()}>
+        <form autoComplete="off" onSubmit={postComment} className="comments-form" onClick={(e) => e.stopPropagation()}>
             <div className="nick-responsive"><input type="text" name="nick" className="nick-textarea" value={values.nick} onChange={handleChange} placeholder="Nick"/></div>
             <div className="comment-responsive"><textarea name="newComment" className="new-comment-textarea" value={values.newComment} onChange={handleChange} cols="32" rows="6" maxLength="200" style={{resize: "none"}} placeholder="Komentarz..."/></div>
             <span className="characters-counter">{200 - values.newComment.length} / 200</span>

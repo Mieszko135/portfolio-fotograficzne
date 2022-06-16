@@ -1,9 +1,28 @@
+.comments-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-width: 40px;
+}
+
 .all-comments-container {
     color: black;
     background-color: rgba(211, 211, 211, 0.5);
     overflow-y: auto;
+    height: 100%;
+    padding: 0 0.5rem;
     @media (max-width: 600px) {
         font-size: 0.5rem;
+    }
+}
+
+.hamburger-comments, .close-comments {
+    position: absolute;
+    right: -15%;
+    cursor: pointer;
+    @media (max-width: 600px) {
+        right: -25%;
     }
 }
 
@@ -45,4 +64,9 @@
     border-radius: 2px;
     background-color: rgba(255, 68, 0, 0.26);
     border: 1px dashed orangered;
+}
+
+.photo-rate {
+    line-height: 2rem;
+    font-weight: 600;
 }

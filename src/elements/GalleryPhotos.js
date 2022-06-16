@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { collection, getDocs} from "firebase/firestore";
 import db from ".././firebase";
 import { AllComments } from "./AllComments";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { CgCloseO } from "react-icons/cg";
 
 export function GalleryPhotos() {
 
@@ -10,6 +12,18 @@ export function GalleryPhotos() {
     const [imgAlt, setImgAlt] = useState("");
     const [photos, setPhotos] = useState([]);
     const [commentId, setCommentId] = useState("");
+
+    const [open, setOpen] = useState(false);
+
+    const hamburgerIcon = <GiHamburgerMenu className="hamburger-comments" size="40px" color="orangered" onClick={(e) => {        
+        e.stopPropagation();
+        setOpen(!open);
+    }}/>;
+
+    const closeIcon = <CgCloseO className="close-comments" size="40px" color="orangered" onClick={(e) => {
+        e.stopPropagation();
+        setOpen(!open);
+    }}/>
 
     useEffect(() => {
         getDocs(collection(db, "Photo Gallery")).then((snapshot) => {
@@ -33,8 +47,12 @@ export function GalleryPhotos() {
                 <img src={imgSrc} alt={imgAlt} className="popup__img" onClick={(e) => {
                     e.stopPropagation()
                 }}/>
-                
-                <AllComments commentId = {commentId}/>
+                <div className="comments-section">
+                    {open ? closeIcon : hamburgerIcon}
+                    {open &&
+                    <AllComments commentId = {commentId}/>
+                    }
+                </div>
             </div>
         </section>
     )
