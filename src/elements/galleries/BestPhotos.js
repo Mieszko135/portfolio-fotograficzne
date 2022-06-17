@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { collection, getDocs} from "firebase/firestore";
-import db from ".././firebase";
+import db from "../.././firebase";
 
-export function DayPhoto() {
+export function BestPhotos() {
 
     const [photos, setPhotos] = useState([]);
     const [avRate, setAvRate] = useState([]);

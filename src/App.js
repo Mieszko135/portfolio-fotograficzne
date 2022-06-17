@@ -5,9 +5,9 @@ import {
   Routes,
 } from 'react-router-dom';
 import { Main } from "./elements/Main";
-import { Gallery } from "./elements/Gallery";
-import { GalleryBeforeAfter } from "./elements/GalleryBeforeAfter";
-import { Contact } from "./elements/Contact";
+import { Gallery } from "./elements/galleries/Gallery";
+import { GalleryBeforeAfter } from "./elements/galleries/GalleryBeforeAfter";
+import { Contact } from "./elements/contact/Contact";
 
 function App() {
   return <BrowserRouter>

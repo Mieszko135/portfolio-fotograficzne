@@ -1,7 +1,7 @@
 import React from "react";
-import { Header } from './Header';
+import { Header } from '../Layout/Header';
 import { GalleryPhotos } from "./GalleryPhotos"
-import { Footer } from './Footer';
+import { Footer } from '../Layout/Footer';
 
 export function Gallery() {
     return (

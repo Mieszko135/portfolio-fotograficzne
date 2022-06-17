@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, setDoc, doc, getDocs} from "firebase/firestore";
-import db from ".././firebase";
+import db from "../.././firebase";
 
 export function NewComment( {commentId} ) {
     const [values, setValues] = useState({nick: "", newComment: "", rate: ""});
 
-    // const [rate, setRate] = useState(1)
-
-    // function rateChange(e) {
-    //     setRate(e.target.value);
-    //     console.log(rate);
-    // }
     const [comments, setComments] = useState([]);
     let sumRate = 0;
     let counter = 0;

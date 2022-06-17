@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { collection, getDocs} from "firebase/firestore";
-import db from ".././firebase";
+import db from "../.././firebase";
 
-export function PhotoBA() {
+export function GalleryPhotosBA() {
 
     const [value, setValue] = useState(50);
     const [photos, setPhotos] = useState([]);

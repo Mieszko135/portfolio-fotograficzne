@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import pageLogo from "../images/camera.svg";
+import pageLogo from "../../images/camera.svg";
 
 export function Logo() {
 

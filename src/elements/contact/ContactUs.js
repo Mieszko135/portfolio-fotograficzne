@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from '@emailjs/browser';
-import smile from "../images/smile.svg";
-import { validate } from "./validate";
+import smile from "../../images/smile.svg";
+import { validate } from "../validate";
 
 export function ContactUs() {
 

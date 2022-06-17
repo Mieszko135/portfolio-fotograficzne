@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs} from "firebase/firestore";
-import db from ".././firebase";
-import { AllComments } from "./AllComments";
+import db from "../.././firebase";
+import { AllComments } from "../comments/AllComments";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgCloseO } from "react-icons/cg";
 

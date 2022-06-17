@@ -1,8 +1,8 @@
 import React from 'react';
-import { Header } from './Header';
+import { Header } from './Layout/Header';
 import { Carousel } from './Carousel';
-import { TopRatedPhotos } from "./TopRatedPhotos"
-import { Footer } from './Footer';
+import { TopRatedPhotos } from "./galleries/TopRatedPhotos"
+import { Footer } from './Layout/Footer';
 import { AboutMe } from './AboutMe';
 
 export function Main() {

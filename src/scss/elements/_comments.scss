@@ -52,6 +52,11 @@
     border-radius: 1rem;
     float: right;
     margin-top: 0.5rem;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(255, 68, 0, 0.26);
+    }
 }
 
 .characters-counter {
@@ -69,4 +74,12 @@
 .photo-rate {
     line-height: 2rem;
     font-weight: 600;
+}
+
+.photo-rating {
+    margin-left: 0.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid rgb(255, 170, 140);
+    background-color: rgba(255, 68, 0, 0.26);
 }
