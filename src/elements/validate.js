@@ -18,6 +18,12 @@ export function validate(values) {
         errorMessages.message = "Pole musi zawierać treść"
     }
 
+    return Object.keys(errorMessages).length > 0 ? errorMessages : null;
+}
+
+export function validateNick(values) {
+    const errorMessages = {};
+
     if (!values.nick) {
         errorMessages.nick = "Podaj nick"
     }

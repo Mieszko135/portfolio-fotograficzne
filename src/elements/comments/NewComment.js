@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, setDoc, doc, getDocs} from "firebase/firestore";
 import db from "../.././firebase";
-import { validate } from "../validate";
+import { validateNick } from "../validate";
 
 export function NewComment( {commentId} ) {
     const [values, setValues] = useState({nick: "", newComment: "", rate: ""});
@@ -50,13 +50,13 @@ export function NewComment( {commentId} ) {
 
     const postComment = async (e) => {
         e.preventDefault();
-
-        const errorMessage = validate(values);
-
+        
+        const errorMessage = validateNick(values);
+        
         setErrorMessages(errorMessage);
-
+        
         if (errorMessage) return;
-
+        
         const collectionRef = collection(db, "Comments");
         const payload = { nick: values.nick, comment: values.newComment, id: commentId, rate: Number(values.rate)};
         await addDoc(collectionRef, payload);
