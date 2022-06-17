@@ -40,7 +40,7 @@ export function AllComments({commentId}) {
                 return null;
             })}
             <div className="photo-rate">
-                Ocena: {average >= 0 ? average : "Brak ocen"}
+                Ocena: {average > 0 ? average : "Brak ocen"}
             </div>
             <NewComment commentId={commentId}/>
         </div>

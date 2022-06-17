@@ -18,5 +18,9 @@ export function validate(values) {
         errorMessages.message = "Pole musi zawierać treść"
     }
 
+    if (!values.nick) {
+        errorMessages.nick = "Podaj nick"
+    }
+
     return Object.keys(errorMessages).length > 0 ? errorMessages : null;
 }

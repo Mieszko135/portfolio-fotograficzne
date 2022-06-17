@@ -7,6 +7,10 @@
     box-shadow: 0px 2px 26px $color-black-shadow;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background-color: white;
 
     &__container {
         display: flex;

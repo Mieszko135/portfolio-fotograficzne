@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, setDoc, doc, getDocs} from "firebase/firestore";
 import db from "../.././firebase";
+import { validate } from "../validate";
 
 export function NewComment( {commentId} ) {
     const [values, setValues] = useState({nick: "", newComment: "", rate: ""});
+    const [errorMessages, setErrorMessages] = useState(null);
 
     const [comments, setComments] = useState([]);
     let sumRate = 0;
@@ -48,6 +50,13 @@ export function NewComment( {commentId} ) {
 
     const postComment = async (e) => {
         e.preventDefault();
+
+        const errorMessage = validate(values);
+
+        setErrorMessages(errorMessage);
+
+        if (errorMessage) return;
+
         const collectionRef = collection(db, "Comments");
         const payload = { nick: values.nick, comment: values.newComment, id: commentId, rate: Number(values.rate)};
         await addDoc(collectionRef, payload);
@@ -56,6 +65,7 @@ export function NewComment( {commentId} ) {
 
     return (
         <form autoComplete="off" onSubmit={postComment} className="comments-form" onClick={(e) => e.stopPropagation()}>
+            <div className="error-message" style={{textAlign: "left", marginBottom: "1rem"}}>{errorMessages?.nick}</div>
             <div className="nick-responsive"><input type="text" name="nick" className="nick-textarea" value={values.nick} onChange={handleChange} placeholder="Nick"/></div>
             <div className="comment-responsive"><textarea name="newComment" className="new-comment-textarea" value={values.newComment} onChange={handleChange} cols="32" rows="6" maxLength="200" style={{resize: "none"}} placeholder="Komentarz..."/></div>
             <span className="characters-counter">{200 - values.newComment.length} / 200</span>
