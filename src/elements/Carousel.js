@@ -24,8 +24,6 @@ export function Carousel() {
         setCurrentPosition(currentPosition === 0 ? length - 1 : currentPosition - 1)
     }
 
-    //Jeśli baza danych jest pusta karuzela się nie wyświetli
-
     if(!Array.isArray(photos) || photos.length <= 0) {
         return null
     }

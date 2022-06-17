@@ -6,10 +6,7 @@ export function BestPhotos() {
 
     const [photos, setPhotos] = useState([]);
     const [avRate, setAvRate] = useState([]);
-    // const [comments, setComments] = useState([]);
-    // let sumRate = 0;
-    // let counter = 0;
-    // let average = 0;
+    
     let newArr = [];
     let sortArr = [];
     let filterArr = [];
@@ -35,34 +32,6 @@ export function BestPhotos() {
         filterArr = sortArr.filter((value, index) => sortArr.indexOf(value) === index)
         return filterArr;
     })
-
-    // avRate.map((rate) => {
-    //     if (rate.rate === sortArr[0]) {
-    //         photos.map((photo) => {
-    //             if (photo.id === rate.id) {
-    //                 return firstSrc = photo.src
-    //             }
-    //             return null
-    //         })
-    //     }
-    //     if (rate.rate === sortArr[1]) {
-    //         photos.map((photo) => {
-    //             if (photo.id === rate.id) {
-    //                 return secondSrc = photo.src
-    //             }
-    //             return null
-    //         })
-    //     }
-    //     if (rate.rate === sortArr[2]) {
-    //         photos.map((photo) => {
-    //             if (photo.id === rate.id) {
-    //                 return thirdSrc = photo.src
-    //             }
-    //             return null
-    //         })
-    //     }
-    //     return null
-    // })
 
     avRate.map((rate) => {
         return photos.map((photo) => {

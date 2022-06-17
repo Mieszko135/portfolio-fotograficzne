@@ -12,6 +12,7 @@
     overflow-y: auto;
     height: 100%;
     padding: 0 0.5rem;
+    margin-top: toRem(100px);
     @media (max-width: 600px) {
         font-size: 0.5rem;
     }
@@ -19,6 +20,7 @@
 
 .hamburger-comments, .close-comments {
     position: absolute;
+    top: toRem(120px);
     right: -15%;
     cursor: pointer;
     @media (max-width: 600px) {
