@@ -21,10 +21,11 @@ export function AllComments({commentId}) {
             if (comment.rate !== 0) {
                 sumRate += Number(comment.rate);
                 counter ++;
+                average = parseFloat(sumRate / counter).toFixed(2);
             }
             return null
         }
-        return average = parseFloat(sumRate / counter).toFixed(2);
+        return average
     })
 
     return (
@@ -32,7 +33,7 @@ export function AllComments({commentId}) {
             {comments.map((comment, index) => {
                 if (commentId === comment.id) {
                 return  <div className="single-comment" key={index}>
-                            <h3 className="nick-comment">{comment.nick}</h3>
+                            <h3 className="nick-comment">Nick: {comment.nick}</h3>
                             <p className="text-comment">{comment.comment}</p>
                         </div>
                 }

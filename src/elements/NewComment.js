@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { collection, addDoc} from "firebase/firestore";
+import React, { useState, useEffect } from 'react';
+import { collection, addDoc, setDoc, doc, getDocs} from "firebase/firestore";
 import db from ".././firebase";
 
 export function NewComment( {commentId} ) {
@@ -11,6 +11,35 @@ export function NewComment( {commentId} ) {
     //     setRate(e.target.value);
     //     console.log(rate);
     // }
+    const [comments, setComments] = useState([]);
+    let sumRate = 0;
+    let counter = 0;
+    let average = 0;
+
+    useEffect(() => {
+        getDocs(collection(db, "Comments")).then((snapshot) => {
+            setComments(snapshot.docs.map((doc) => doc.data()))
+        })
+    }, []);
+
+    comments.map((comment) => {
+        if (commentId === comment.id) {
+            if (comment.rate !== 0) {
+                sumRate += Number(comment.rate);
+                counter ++;
+                average = parseFloat(sumRate / counter).toFixed(2);
+            }
+            return null
+        }
+        return average
+    })
+    
+    const updateDoc = async (id) => {
+        const docRef = doc(db, "Ratings", id);
+        const payload = { id: id, rate: Number(average)};
+
+        setDoc(docRef, payload)
+    }
 
     function handleChange(e) {
         const {name, value} = e.target;
@@ -45,7 +74,7 @@ export function NewComment( {commentId} ) {
                 <option value={4}>4</option>
                 <option value={5}>5</option>
             </select></div>
-            <input type="submit" className="new-message-btn" value="Wyślij"/>
+            <input type="submit" className="new-message-btn" value="Wyślij" onClick={() => updateDoc(commentId)}/>
         </form>
     )
 }
