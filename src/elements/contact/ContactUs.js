@@ -30,7 +30,7 @@ export function ContactUs() {
 
         if (errorMessage) return;
 
-        emailjs.sendForm('service_6ybt1bh', 'template_7wc74jk', e.target, 'a4wPFQftLtQ-6-FwX')
+        emailjs.sendForm(`${process.env.REACT_APP_EMAILJS_SERVICE_ID}`, `${process.env.REACT_APP_EMAILJS_TEMPLATE_ID}`, e.target, `${process.env.REACT_APP_EMAILJS_PUBLIC_KEY}`)
           .then(() => {
               setMailSend("Wiadomość wysłana pomyślnie");
               setSendInfoClass("mail-send-info");
