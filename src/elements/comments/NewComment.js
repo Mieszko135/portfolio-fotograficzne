@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, addDoc, setDoc, doc, getDocs} from "firebase/firestore";
+import { collection, setDoc, doc, getDocs} from "firebase/firestore";
 import db from "../.././firebase";
 import { validateNick } from "../validate";
 
@@ -50,6 +50,15 @@ export function NewComment( {commentId} ) {
 
     const postComment = async (e) => {
         e.preventDefault();
+
+        let today = new Date();
+
+        function addZero(sec) {
+            if (sec < 10) {sec = "0" + sec}
+            return sec;
+        }
+
+        let date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate() + " " + addZero(today.getHours()) + ":" + addZero(today.getMinutes()) + ":" + addZero(today.getSeconds());
         
         const errorMessage = validateNick(values);
         
@@ -57,9 +66,9 @@ export function NewComment( {commentId} ) {
         
         if (errorMessage) return;
         
-        const collectionRef = collection(db, "Comments");
-        const payload = { nick: values.nick, comment: values.newComment, id: commentId, rate: Number(values.rate)};
-        await addDoc(collectionRef, payload);
+        const collectionRef = doc(db, "Comments", date);
+        const payload = { nick: values.nick, comment: values.newComment, id: commentId, rate: Number(values.rate), timeNow: date};
+        await setDoc(collectionRef, payload);
         setValues({nick: "", newComment: "", rate: ""})
     }
 

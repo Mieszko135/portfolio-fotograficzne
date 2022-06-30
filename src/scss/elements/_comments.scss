@@ -11,6 +11,7 @@
     background-color: rgba(211, 211, 211, 0.5);
     overflow-y: auto;
     height: 100%;
+    max-width: 300px;
     padding: 0 0.5rem;
     margin-top: toRem(100px);
     @media (max-width: 600px) {
@@ -72,6 +73,16 @@
     border-radius: 2px;
     background-color: rgba(255, 68, 0, 0.26);
     border: 1px dashed orangered;
+}
+
+.time-comment, .nick-comment, .text-comment {
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.text-comment {
+    overflow-wrap: break-word;
+    line-height: 1.2rem;
 }
 
 .photo-rate {

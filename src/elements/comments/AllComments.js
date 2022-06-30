@@ -33,6 +33,7 @@ export function AllComments({commentId}) {
             {comments.map((comment, index) => {
                 if (commentId === comment.id) {
                 return  <div className="single-comment" key={index}>
+                            <span className="time-comment">{comment.timeNow}</span>
                             <h3 className="nick-comment">Nick: {comment.nick}</h3>
                             <p className="text-comment">{comment.comment}</p>
                         </div>
